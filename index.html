@@ -220,6 +220,138 @@ header{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:calc(10
   }
 }
 
+
+
+/* ===== ADVANCED PROJECT SHOWCASE UPGRADE ===== */
+.projects-advanced{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:24px;
+  align-items:stretch;
+}
+.project-feature{
+  min-height:520px;
+  display:grid;
+  grid-template-columns:1fr .95fr;
+  gap:24px;
+  align-items:center;
+  isolation:isolate;
+}
+.project-feature::before,
+.portfolio-poster::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.22),transparent 28%);
+  opacity:.75;
+  pointer-events:none;
+  z-index:-1;
+}
+.project-preview{
+  position:relative;
+  min-height:430px;
+  border:1px solid var(--line);
+  border-radius:34px;
+  background:linear-gradient(145deg,var(--card2),rgba(255,255,255,.03));
+  overflow:hidden;
+  transform-style:preserve-3d;
+}
+.glow-ring{
+  position:absolute;
+  width:300px;
+  height:300px;
+  border:1px solid color-mix(in srgb,var(--text) 26%,transparent);
+  border-radius:50%;
+  inset:50% auto auto 50%;
+  transform:translate(-50%,-50%);
+  animation:spin 16s linear infinite;
+  opacity:.55;
+}
+.glow-ring.r2{width:420px;height:420px;animation-duration:24s;animation-direction:reverse;opacity:.28}
+.showcase-logo{
+  position:absolute;
+  left:50%;top:50%;
+  width:min(92%,430px);
+  transform:translate(-50%,-50%) translateZ(50px);
+  border-radius:26px;
+  box-shadow:0 35px 120px rgba(0,0,0,.42);
+  filter:drop-shadow(0 0 24px rgba(130,255,90,.26));
+}
+.tool-chip{
+  position:absolute;
+  display:grid;
+  place-items:center;
+  width:66px;height:66px;
+  border-radius:22px;
+  background:var(--text);
+  color:var(--bg);
+  border:1px solid var(--line);
+  box-shadow:0 18px 55px rgba(0,0,0,.28);
+  font-weight:1000;
+  letter-spacing:-1px;
+  transform:translateZ(80px);
+  animation:floatTool 5.2s ease-in-out infinite;
+}
+.tool-chip:nth-child(4){left:10%;top:16%;animation-delay:.1s}.tool-chip:nth-child(5){right:11%;top:18%;animation-delay:.7s}.tool-chip:nth-child(6){left:12%;bottom:18%;animation-delay:1.2s}.tool-chip:nth-child(7){right:13%;bottom:15%;animation-delay:1.8s}.tool-chip:nth-child(8){left:42%;top:8%;animation-delay:2.2s}
+@keyframes floatTool{50%{transform:translateY(-18px) translateZ(95px) rotate(5deg)}}
+.project-feature h3{font-size:clamp(1.8rem,3.2vw,3.2rem);line-height:1;letter-spacing:-1.4px;margin-bottom:14px}
+.project-feature p{color:var(--muted);margin-bottom:18px}
+.poster-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.portfolio-poster{
+  position:relative;
+  min-height:390px;
+  padding:0;
+  overflow:hidden;
+  transform-style:preserve-3d;
+  cursor:pointer;
+}
+.portfolio-poster.tall{min-height:520px}
+.poster-img{
+  width:100%;height:100%;min-height:inherit;
+  object-fit:cover;
+  display:block;
+  transform:scale(1.02);
+  transition:transform .8s cubic-bezier(.2,.8,.2,1), filter .8s;
+}
+.portfolio-poster:hover .poster-img{transform:scale(1.09);filter:saturate(1.1) contrast(1.05)}
+.poster-overlay{
+  position:absolute;
+  inset:auto 16px 16px 16px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:22px;
+  background:rgba(0,0,0,.55);
+  color:white;
+  backdrop-filter:blur(18px);
+  transform:translateY(10px);
+  opacity:.95;
+  transition:.35s;
+}
+.portfolio-poster:hover .poster-overlay{transform:translateY(0)}
+.poster-overlay h3{font-size:1rem;margin-bottom:5px;color:white}.poster-overlay p{font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.78);margin:0}
+.design-process{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:22px;
+}
+.process-step{
+  border:1px solid var(--line);
+  background:var(--card2);
+  border-radius:20px;
+  padding:16px;
+}
+.process-step b{font-size:1.35rem}.process-step span{display:block;color:var(--muted);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-top:5px}
+.magnetic{transition:transform .18s ease-out}
+@media(max-width:1180px){.projects-advanced,.project-feature{grid-template-columns:1fr}.poster-grid{grid-template-columns:repeat(3,1fr)}.portfolio-poster,.portfolio-poster.tall{min-height:360px}}
+@media(max-width:760px){.poster-grid{grid-template-columns:1fr}.project-feature{min-height:auto}.project-preview{min-height:310px}.showcase-logo{width:88%}.tool-chip{width:52px;height:52px;border-radius:18px;font-size:.82rem}.design-process{grid-template-columns:1fr 1fr}.portfolio-poster,.portfolio-poster.tall{min-height:430px}}
+@media(max-width:430px){.project-preview{min-height:280px}.portfolio-poster,.portfolio-poster.tall{min-height:360px}.design-process{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -253,7 +385,30 @@ header{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:calc(10
 <section class="section" id="education"><div class="inner"><div class="label">Academic Path</div><h2 class="title">Education <em>Timeline</em></h2><div class="timeline"><div class="time reveal"><div class="dot">B</div><div class="card"><h3>Bachelor of Science — Computer Science</h3><div class="meta"><span class="pill">K.S. Rangasamy College</span><span class="pill">Periyar University</span><span class="pill">2023 – 2026</span></div><strong>79%</strong><div class="bar"><i style="--w:79%"></i></div></div></div><div class="time reveal"><div class="dot">H</div><div class="card"><h3>Higher Secondary Certificate</h3><div class="meta"><span class="pill">St. Mary's Matric. Hr. Sec. School</span><span class="pill">2023</span><span class="pill">State Board</span></div><strong>68%</strong><div class="bar"><i style="--w:68%"></i></div></div></div><div class="time reveal"><div class="dot">S</div><div class="card"><h3>Secondary School Certificate</h3><div class="meta"><span class="pill">St. Mary's Matric. Hr. Sec. School</span><span class="pill">2021</span><span class="pill">State Board</span></div><strong>85%</strong><div class="bar"><i style="--w:85%"></i></div></div></div></div></div></section>
 <section class="section" id="experience"><div class="inner"><div class="label">Work Experience</div><h2 class="title">Applied <em>Experience</em></h2><div class="card experience reveal"><div><span class="badge">● Completed · March 2025</span><h3>Graphic Designer Intern</h3><p class="lead" style="font-size:1rem;margin:12px 0 0">Imagivite Technology Pvt. Ltd., Tiruchengode<br>Tools: Adobe Photoshop, Canva</p></div><div class="points"><p class="point"><span class="num">01</span>Designed branding assets including logos, application banners, and hiring posters.</p><p class="point"><span class="num">02</span>Improved practical knowledge in visual hierarchy, layout, spacing, and color theory.</p><p class="point"><span class="num">03</span>Created digital designs with professional consistency and deadline-focused workflow.</p></div></div></div></section>
 <section class="section" id="skills"><div class="inner"><div class="label">Technical Abilities</div><h2 class="title">Skills & <em>Toolbox</em></h2><div class="skills"><div class="card skill reveal"><div class="skill-icon">🌐</div><h3>HTML5</h3><div class="level">Intermediate</div><div class="bar"><i style="--w:80%"></i></div></div><div class="card skill reveal"><div class="skill-icon">🎨</div><h3>CSS3</h3><div class="level">Intermediate</div><div class="bar"><i style="--w:78%"></i></div></div><div class="card skill reveal"><div class="skill-icon">⚡</div><h3>JavaScript</h3><div class="level">Basics</div><div class="bar"><i style="--w:55%"></i></div></div><div class="card skill reveal"><div class="skill-icon">🗃️</div><h3>SQL</h3><div class="level">Beginner</div><div class="bar"><i style="--w:50%"></i></div></div><div class="card skill reveal"><div class="skill-icon">🧩</div><h3>UI / UX Design</h3><div class="level">Basics</div><div class="bar"><i style="--w:60%"></i></div></div><div class="card skill reveal"><div class="skill-icon">🖼️</div><h3>Adobe Photoshop</h3><div class="level">Intermediate</div><div class="bar"><i style="--w:72%"></i></div></div></div></div></section>
-<section class="section" id="projects"><div class="inner"><div class="label">Featured Work</div><h2 class="title">Projects I've <em>Built</em></h2><div class="projects"><div class="card project reveal"><div class="project-art">💻</div><h3>Personal Portfolio Website</h3><p>Responsive portfolio website with modern sections, smooth animation, and clean black-and-white design.</p><div class="meta"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Responsive</span></div></div><div class="card project reveal"><div class="project-art">🏫</div><h3>ERP Based School Management System</h3><p>School ERP concept with role-based dashboards for admin, teacher, and student management.</p><div class="meta"><span class="pill">React</span><span class="pill">Dashboard</span><span class="pill">UI Design</span><span class="pill">Database</span></div></div><div class="card project reveal"><div class="project-art">🎭</div><h3>Brand Identity Designs</h3><p>Logos, promotional banners, hiring posters, and creative social media designs made during internship practice.</p><div class="meta"><span class="pill">Photoshop</span><span class="pill">Canva</span><span class="pill">Branding</span></div></div></div></div></section>
+<section class="section" id="projects"><div class="inner"><div class="label">Featured Work</div><h2 class="title">Projects & <em>Creative Works</em></h2>
+<div class="projects-advanced">
+  <div class="card project-feature reveal magnetic">
+    <div class="project-preview">
+      <span class="glow-ring"></span><span class="glow-ring r2"></span>
+      <img class="showcase-logo" src="portfolio_assets/bookynet-logo.jpg" alt="Bookynet logo design by E. Sakthivel">
+      <span class="tool-chip">Ai</span><span class="tool-chip">Ps</span><span class="tool-chip">UI</span><span class="tool-chip">UX</span><span class="tool-chip">JS</span>
+    </div>
+    <div>
+      <span class="badge">● Internship Design Showcase</span>
+      <h3>Branding, Posters & Digital Design</h3>
+      <p>I upgraded this project section with my real internship works: hiring posters, logo design, AI education poster, and creative social media style layouts.</p>
+      <div class="meta"><span class="pill">Photoshop</span><span class="pill">Canva</span><span class="pill">Illustrator Style</span><span class="pill">Poster Design</span><span class="pill">Branding</span></div>
+      <div class="design-process"><div class="process-step"><b>01</b><span>Concept</span></div><div class="process-step"><b>02</b><span>Layout</span></div><div class="process-step"><b>03</b><span>Visuals</span></div><div class="process-step"><b>04</b><span>Final Design</span></div></div>
+    </div>
+  </div>
+  <div class="poster-grid">
+    <div class="card portfolio-poster tall reveal magnetic"><img class="poster-img" src="portfolio_assets/imagivite-blue-hiring.png" alt="Imagivite internship hiring poster"><div class="poster-overlay"><h3>Internship Hiring Poster</h3><p>Bold recruitment poster with role list, CTA and company details.</p></div></div>
+    <div class="card portfolio-poster reveal magnetic"><img class="poster-img" src="portfolio_assets/ai-education-poster.jpg" alt="AI in education poster design"><div class="poster-overlay"><h3>AI in Education Poster</h3><p>Technology themed design using robot visuals and education-focused messaging.</p></div></div>
+    <div class="card portfolio-poster reveal magnetic"><img class="poster-img" src="portfolio_assets/imagivite-red-hiring.jpg" alt="Imagivite startup hiring poster"><div class="poster-overlay"><h3>Startup Hiring Poster</h3><p>High-contrast poster layout for internship hiring promotion.</p></div></div>
+  </div>
+</div>
+<div class="projects" style="margin-top:24px"><div class="card project reveal"><div class="project-art">💻</div><h3>Personal Portfolio Website</h3><p>Responsive portfolio website with premium black-and-white UI, smooth scroll animation, mobile-friendly layout, and advanced project showcase.</p><div class="meta"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Responsive</span></div></div><div class="card project reveal"><div class="project-art">🏫</div><h3>ERP Based School Management System</h3><p>School ERP concept with role-based dashboards for admin, teacher, and student management.</p><div class="meta"><span class="pill">React</span><span class="pill">Dashboard</span><span class="pill">UI Design</span><span class="pill">Database</span></div></div></div>
+</div></section>
 <section class="section" id="certificates"><div class="inner"><div class="label">Credentials</div><h2 class="title">Earned <em>Certificates</em></h2><div class="certs"><div class="card cert reveal"><h3>🏅 Certificate in Poster Making</h3><p>Design skills and creative visual communication.</p></div><div class="card cert reveal"><h3>🎓 Canva Design — Course Completion</h3><p>Practical design workflow and digital layout creation.</p></div></div></div></section>
 <section class="section" id="contact"><div class="inner"><div class="label">Reach Out</div><h2 class="title">Let's Build Something <em>Great</em></h2><div class="contact"><div class="card reveal"><p class="lead" style="font-size:1rem;margin-bottom:18px">Open to internships, design work, web development opportunities, and professional collaborations.</p><a href="tel:+919342909014"><span class="ico">☎</span><span><strong>Phone</strong><br>+91 9342909014</span></a><a href="mailto:sakthiveleswaran2104@gmail.com"><span class="ico">✉</span><span><strong>Email</strong><br>sakthiveleswaran2104@gmail.com</span></a><a href="https://www.linkedin.com/in/sakthivel-e-562943361" target="_blank"><span class="ico">in</span><span><strong>LinkedIn</strong><br>sakthivel-e-562943361</span></a></div><div class="card resume-box reveal"><h3>My Resume</h3><p>Use the buttons below to view or download my full resume. Keep your PDF in the same path used here.</p><div class="resume-actions"><a href="assets/Resume/Sakthivel Resume.pdf" target="_blank" class="btn primary">View Resume</a><a href="assets/Resume/Sakthivel Resume.pdf" download class="btn secondary">Download Resume</a></div></div></div></div></section>
 </main><footer><div>© 2026 <strong>E. Sakthivel</strong> · Portfolio</div></footer>
@@ -261,6 +416,23 @@ header{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:calc(10
 const root=document.documentElement,themeToggle=document.getElementById('themeToggle'),saved=localStorage.getItem('theme')||'dark';function setTheme(t){root.setAttribute('data-theme',t);localStorage.setItem('theme',t);themeToggle.textContent=t==='dark'?'Dark':'Light'}setTheme(saved);themeToggle.onclick=()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');
 const nav=document.getElementById('nav');document.getElementById('menu').onclick=()=>nav.classList.toggle('open');document.querySelectorAll('#navLinks a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
 const reveal=()=>document.querySelectorAll('.reveal').forEach((el,i)=>{if(el.getBoundingClientRect().top<innerHeight-80){el.style.transitionDelay=(i%6)*.04+'s';el.classList.add('show')}});const links=document.querySelectorAll('#navLinks a'),sections=document.querySelectorAll('section[id]');function active(){let id='home';sections.forEach(s=>{if(scrollY>=s.offsetTop-170)id=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id))}addEventListener('scroll',()=>{reveal();active()});addEventListener('load',()=>{reveal();active()});
+
+
+// Advanced magnetic tilt + spotlight for project cards
+const magneticCards=document.querySelectorAll('.magnetic');
+magneticCards.forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=e.clientX-r.left, y=e.clientY-r.top;
+    const rx=((y/r.height)-.5)*-8;
+    const ry=((x/r.width)-.5)*8;
+    card.style.setProperty('--mx',`${(x/r.width)*100}%`);
+    card.style.setProperty('--my',`${(y/r.height)*100}%`);
+    card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px)`;
+  });
+  card.addEventListener('mouseleave',()=>{card.style.transform='';card.style.setProperty('--mx','50%');card.style.setProperty('--my','0%')});
+});
+
 </script>
 </body>
 </html>
