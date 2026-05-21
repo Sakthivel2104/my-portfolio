@@ -132,6 +132,94 @@ header{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:calc(10
   .mini{min-height:78px}
 }
 
+/* ================= MOBILE VIEW FINAL FIX ================= */
+@media (max-width:640px){
+  .hero{
+    min-height:auto !important;
+    padding:110px 14px 42px !important;
+  }
+  .hero-wrap{
+    display:block !important;
+    width:100% !important;
+  }
+  .visual{
+    order:0 !important;
+    margin-top:28px !important;
+    min-height:auto !important;
+    max-width:100% !important;
+  }
+  .orbit{
+    position:relative !important;
+    min-height:505px !important;
+    border-radius:28px !important;
+  }
+  .profile{
+    inset:14px !important;
+    gap:13px !important;
+  }
+  .profile-top{
+    display:flex !important;
+    align-items:center !important;
+  }
+  .avatar{
+    width:72px !important;
+    height:72px !important;
+    border-radius:22px !important;
+    font-size:1.75rem !important;
+  }
+  .profile h2{
+    font-size:1.55rem !important;
+    margin-bottom:6px !important;
+  }
+  .profile p{
+    font-size:.86rem !important;
+    line-height:1.45 !important;
+  }
+  .role-pills{
+    margin-top:10px !important;
+    gap:7px !important;
+  }
+  .role-pills span{
+    font-size:.62rem !important;
+    padding:7px 8px !important;
+  }
+  .meter{
+    grid-template-columns:1fr 1fr !important;
+    gap:9px !important;
+  }
+  .mini{
+    min-height:82px !important;
+    padding:13px !important;
+    border-radius:17px !important;
+  }
+  .mini b{
+    font-size:1.45rem !important;
+  }
+  .mini span{
+    font-size:.62rem !important;
+    margin-top:5px !important;
+  }
+  .marquee{
+    margin-top:0 !important;
+  }
+}
+
+@media (max-width:380px){
+  .orbit{
+    min-height:530px !important;
+  }
+  .profile{
+    inset:12px !important;
+  }
+  .role-pills span{
+    font-size:.58rem !important;
+    padding:6px 7px !important;
+  }
+  .mini{
+    padding:11px !important;
+  }
+}
+
 </style>
 </head>
 <body>
