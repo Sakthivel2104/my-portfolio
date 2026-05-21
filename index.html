@@ -1,230 +1,230 @@
-<!-- ===================== CINEMATIC HERO TITLE ===================== -->
-<section class="cinematic-hero">
-  <div class="hero-overlay"></div>
+<!-- ========================= TOP PORTFOLIO HERO ========================= -->
 
-  <div class="portfolio-text">
-    <span class="small-name">E. Sakthivel</span>
-    <h1>
-      portfo<span class="highlight">lio</span>
-    </h1>
+<section class="cinematic-portfolio">
+    <div class="portfolio-bg-text">
+        <h1>portfolio</h1>
+    </div>
 
-    <div class="floating-pen"></div>
-  </div>
+    <div class="portfolio-pen"></div>
+
+    <div class="portfolio-name">
+        <span>E. Sakthivel</span>
+    </div>
 </section>
 
 <style>
-.cinematic-hero{
+.cinematic-portfolio{
     position:relative;
-    min-height:70vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
+    height:75vh;
     background:#050505;
-    padding:120px 20px 60px;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.cinematic-hero::before{
+.portfolio-bg-text h1{
+    font-size:clamp(5rem,14vw,12rem);
+    font-weight:900;
+    color:#141414;
+    letter-spacing:-8px;
+    text-transform:lowercase;
+    position:relative;
+}
+
+.portfolio-bg-text h1::after{
     content:"";
     position:absolute;
     inset:0;
-    background:
-    linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
-    background-size:80px 80px;
-    opacity:.25;
+    background:linear-gradient(to right,#ff7a00,#ff9d00);
+    -webkit-background-clip:text;
+    color:transparent;
+    mix-blend-mode:screen;
+    opacity:.7;
 }
 
-.hero-overlay{
+.portfolio-pen{
     position:absolute;
-    inset:0;
-    background:
-    radial-gradient(circle at center, rgba(255,140,0,.22), transparent 40%);
-    filter:blur(40px);
-}
-
-.portfolio-text{
-    position:relative;
-    z-index:2;
-    text-align:center;
-}
-
-.small-name{
-    color:#bdbdbd;
-    font-size:1.2rem;
-    letter-spacing:2px;
-    display:block;
-    margin-bottom:10px;
-}
-
-.portfolio-text h1{
-    font-size:clamp(4rem,14vw,10rem);
-    font-weight:900;
-    text-transform:lowercase;
-    color:#151515;
-    position:relative;
-    letter-spacing:-5px;
-}
-
-.highlight{
-    color:#ff7a00;
-    text-shadow:0 0 40px rgba(255,122,0,.45);
-}
-
-.floating-pen{
-    position:absolute;
-    width:280px;
+    width:340px;
     height:16px;
-    background:linear-gradient(to right,#1b1b1b,#8b5a2b,#111);
+    background:linear-gradient(to right,#111,#7b4b1f,#111);
     border-radius:30px;
-    top:52%;
+    top:50%;
     left:50%;
     transform:translate(-50%,-50%) rotate(-2deg);
-    box-shadow:0 0 25px rgba(255,122,0,.3);
-    animation:floatPen 4s ease-in-out infinite;
+    box-shadow:0 0 30px rgba(255,122,0,.35);
+    animation:penFloat 4s ease-in-out infinite;
 }
 
-@keyframes floatPen{
-    0%{transform:translate(-50%,-50%) rotate(-2deg)}
-    50%{transform:translate(-50%,-60%) rotate(1deg)}
-    100%{transform:translate(-50%,-50%) rotate(-2deg)}
+@keyframes penFloat{
+    50%{
+        transform:translate(-50%,-60%) rotate(2deg);
+    }
+}
+
+.portfolio-name{
+    position:absolute;
+    left:30px;
+    top:30px;
+    color:#fff;
+    font-size:1.1rem;
+    font-weight:700;
+    opacity:.9;
 }
 
 @media(max-width:768px){
-    .cinematic-hero{
-        min-height:50vh;
-        padding-top:90px;
+
+    .cinematic-portfolio{
+        height:45vh;
     }
 
-    .portfolio-text h1{
-        letter-spacing:-2px;
+    .portfolio-bg-text h1{
+        font-size:4.3rem;
+        letter-spacing:-3px;
     }
 
-    .floating-pen{
+    .portfolio-pen{
         width:160px;
-        height:10px;
+        height:8px;
+    }
+
+    .portfolio-name{
+        font-size:.8rem;
     }
 }
 </style>
 
 
 
-<!-- ===================== REDESIGNED SKILLS SECTION ===================== -->
-<section class="modern-skills" id="skills">
 
-  <div class="skills-title-wrap">
-      <h2>Skills & Tools</h2>
-      <p>Technologies and creative tools I use to build modern digital experiences.</p>
-  </div>
+<!-- ========================= PREMIUM SKILLS SECTION ========================= -->
 
-  <div class="skills-grid">
+<section class="ultra-skills" id="skills">
 
-      <div class="skill-card">
-          <div class="skill-icon">🌐</div>
-          <h3>HTML5</h3>
-          <span>Intermediate</span>
-          <div class="skill-bar"><div style="width:85%"></div></div>
-      </div>
+    <div class="skills-heading">
+        <h2>Skills & Tools</h2>
+        <p>Modern technologies and creative tools I use for building premium digital experiences.</p>
+    </div>
 
-      <div class="skill-card">
-          <div class="skill-icon">🎨</div>
-          <h3>CSS3</h3>
-          <span>Intermediate</span>
-          <div class="skill-bar"><div style="width:80%"></div></div>
-      </div>
+    <div class="ultra-skills-grid">
 
-      <div class="skill-card">
-          <div class="skill-icon">⚡</div>
-          <h3>JavaScript</h3>
-          <span>Basics</span>
-          <div class="skill-bar"><div style="width:60%"></div></div>
-      </div>
+        <div class="ultra-skill-card">
+            <div class="ultra-icon">🌐</div>
+            <h3>HTML5</h3>
+            <span>Intermediate</span>
+            <div class="ultra-bar">
+                <div style="width:85%"></div>
+            </div>
+        </div>
 
-      <div class="skill-card">
-          <div class="skill-icon">🗃️</div>
-          <h3>SQL</h3>
-          <span>Beginner</span>
-          <div class="skill-bar"><div style="width:50%"></div></div>
-      </div>
+        <div class="ultra-skill-card">
+            <div class="ultra-icon">🎨</div>
+            <h3>CSS3</h3>
+            <span>Intermediate</span>
+            <div class="ultra-bar">
+                <div style="width:80%"></div>
+            </div>
+        </div>
 
-      <div class="skill-card">
-          <div class="skill-icon">🧩</div>
-          <h3>UI / UX</h3>
-          <span>Basics</span>
-          <div class="skill-bar"><div style="width:58%"></div></div>
-      </div>
+        <div class="ultra-skill-card">
+            <div class="ultra-icon">⚡</div>
+            <h3>JavaScript</h3>
+            <span>Basics</span>
+            <div class="ultra-bar">
+                <div style="width:60%"></div>
+            </div>
+        </div>
 
-      <div class="skill-card">
-          <div class="skill-icon">🖼️</div>
-          <h3>Photoshop</h3>
-          <span>Intermediate</span>
-          <div class="skill-bar"><div style="width:78%"></div></div>
-      </div>
+        <div class="ultra-skill-card">
+            <div class="ultra-icon">🗃️</div>
+            <h3>SQL</h3>
+            <span>Beginner</span>
+            <div class="ultra-bar">
+                <div style="width:55%"></div>
+            </div>
+        </div>
 
-  </div>
+        <div class="ultra-skill-card">
+            <div class="ultra-icon">🧩</div>
+            <h3>UI / UX</h3>
+            <span>Basics</span>
+            <div class="ultra-bar">
+                <div style="width:58%"></div>
+            </div>
+        </div>
+
+        <div class="ultra-skill-card">
+            <div class="ultra-icon">🖼️</div>
+            <h3>Photoshop</h3>
+            <span>Intermediate</span>
+            <div class="ultra-bar">
+                <div style="width:78%"></div>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 <style>
-.modern-skills{
+.ultra-skills{
     padding:100px 20px;
     background:#050505;
 }
 
-.skills-title-wrap{
+.skills-heading{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:55px;
 }
 
-.skills-title-wrap h2{
-    font-size:clamp(2.5rem,5vw,4rem);
+.skills-heading h2{
+    font-size:clamp(2.5rem,5vw,4.5rem);
     color:#fff;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
-.skills-title-wrap p{
-    color:#9a9a9a;
+.skills-heading p{
+    color:#9d9d9d;
     max-width:700px;
     margin:auto;
 }
 
-.skills-grid{
+.ultra-skills-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:24px;
 }
 
-.skill-card{
+.ultra-skill-card{
     background:rgba(255,255,255,.03);
     border:1px solid rgba(255,255,255,.08);
-    border-radius:30px;
-    padding:35px 28px;
-    transition:.4s ease;
+    border-radius:32px;
+    padding:34px 28px;
+    transition:.4s;
     backdrop-filter:blur(12px);
 }
 
-.skill-card:hover{
+.ultra-skill-card:hover{
     transform:translateY(-10px);
     border-color:rgba(255,122,0,.4);
-    box-shadow:0 0 30px rgba(255,122,0,.15);
+    box-shadow:0 0 40px rgba(255,122,0,.18);
 }
 
-.skill-icon{
-    font-size:2.4rem;
+.ultra-icon{
+    font-size:2.2rem;
     margin-bottom:18px;
 }
 
-.skill-card h3{
+.ultra-skill-card h3{
     color:#fff;
     font-size:1.5rem;
     margin-bottom:8px;
 }
 
-.skill-card span{
-    color:#9f9f9f;
-    font-size:.95rem;
+.ultra-skill-card span{
+    color:#9d9d9d;
 }
 
-.skill-bar{
+.ultra-bar{
     width:100%;
     height:10px;
     background:#1c1c1c;
@@ -233,163 +233,174 @@
     margin-top:22px;
 }
 
-.skill-bar div{
+.ultra-bar div{
     height:100%;
     border-radius:30px;
     background:linear-gradient(to right,#fff,#ff7a00);
 }
 
 @media(max-width:768px){
-    .modern-skills{
+
+    .ultra-skills{
         padding:70px 14px;
     }
 
-    .skills-grid{
+    .ultra-skills-grid{
         grid-template-columns:1fr 1fr;
         gap:14px;
     }
 
-    .skill-card{
-        padding:22px 18px;
+    .ultra-skill-card{
+        padding:20px 16px;
         border-radius:22px;
     }
 
-    .skill-card h3{
+    .ultra-skill-card h3{
         font-size:1rem;
     }
 
-    .skill-icon{
-        font-size:1.7rem;
+    .ultra-icon{
+        font-size:1.5rem;
     }
 
-    .skill-card span{
-        font-size:.75rem;
+    .ultra-skill-card span{
+        font-size:.72rem;
     }
 
-    .skill-bar{
+    .ultra-bar{
         height:7px;
-        margin-top:16px;
-    }
-}
-
-@media(max-width:480px){
-    .skills-grid{
-        grid-template-columns:1fr 1fr;
+        margin-top:14px;
     }
 }
 </style>
 
 
 
-<!-- ===================== PROJECTS SECTION ===================== -->
-<section class="poster-showcase">
 
-  <div class="showcase-title">
-      <h2>Creative Internship Works</h2>
-  </div>
+<!-- ========================= NEW PROJECTS SECTION ========================= -->
 
-  <div class="poster-row">
+<section class="modern-posters" id="projects">
 
-      <div class="poster-card">
-          <img src="YOUR_POSTER_1_IMAGE_PATH">
-          <div class="poster-content">
-              <h3>Internship Hiring Poster</h3>
-              <p>Bold recruitment poster with role list and startup promotion.</p>
-          </div>
-      </div>
+    <div class="poster-heading">
+        <h2>Creative Internship Works</h2>
+    </div>
 
-      <div class="poster-card">
-          <img src="YOUR_POSTER_2_IMAGE_PATH">
-          <div class="poster-content">
-              <h3>AI in Education Poster</h3>
-              <p>Technology themed educational visual design concept.</p>
-          </div>
-      </div>
+    <div class="poster-horizontal-row">
 
-  </div>
+        <div class="modern-poster-card">
+            <img src="YOUR_POSTER_1_IMAGE">
+
+            <div class="poster-info">
+                <h3>Internship Hiring Poster</h3>
+                <p>Bold recruitment poster with role list and startup branding.</p>
+            </div>
+        </div>
+
+        <div class="modern-poster-card">
+            <img src="YOUR_POSTER_2_IMAGE">
+
+            <div class="poster-info">
+                <h3>AI in Education Poster</h3>
+                <p>Technology themed AI education visual design concept.</p>
+            </div>
+        </div>
+
+        <div class="modern-poster-card">
+            <img src="YOUR_POSTER_3_IMAGE">
+
+            <div class="poster-info">
+                <h3>Startup Hiring Poster</h3>
+                <p>Modern internship promotion poster with contrast visuals.</p>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 <style>
-.poster-showcase{
-    padding:90px 20px;
+.modern-posters{
+    padding:100px 20px;
     background:#050505;
 }
 
-.showcase-title{
+.poster-heading{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:45px;
 }
 
-.showcase-title h2{
+.poster-heading h2{
     color:#fff;
-    font-size:clamp(2.4rem,5vw,4rem);
+    font-size:clamp(2.5rem,5vw,4rem);
 }
 
-.poster-row{
+.poster-horizontal-row{
     display:flex;
-    gap:30px;
+    gap:24px;
     justify-content:center;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
 }
 
-.poster-card{
-    position:relative;
+.modern-poster-card{
     width:340px;
-    border-radius:34px;
+    position:relative;
     overflow:hidden;
+    border-radius:34px;
     background:#111;
-    transition:.5s;
     border:1px solid rgba(255,255,255,.08);
+    transition:.5s;
 }
 
-.poster-card:hover{
-    transform:translateY(-12px) scale(1.02);
-    box-shadow:0 0 40px rgba(255,122,0,.2);
+.modern-poster-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 0 35px rgba(255,122,0,.2);
 }
 
-.poster-card img{
+.modern-poster-card img{
     width:100%;
-    height:540px;
+    height:560px;
     object-fit:cover;
 }
 
-.poster-content{
+.poster-info{
     position:absolute;
-    left:20px;
-    right:20px;
-    bottom:20px;
+    left:16px;
+    right:16px;
+    bottom:16px;
     background:rgba(0,0,0,.55);
-    backdrop-filter:blur(12px);
-    border-radius:24px;
-    padding:20px;
+    backdrop-filter:blur(14px);
+    border-radius:22px;
+    padding:18px;
 }
 
-.poster-content h3{
+.poster-info h3{
     color:#fff;
     margin-bottom:8px;
 }
 
-.poster-content p{
+.poster-info p{
     color:#d0d0d0;
     line-height:1.5;
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-    .poster-row{
-        gap:18px;
+    .poster-horizontal-row{
+        overflow-x:auto;
+        justify-content:flex-start;
+        padding-bottom:12px;
     }
 
-    .poster-card{
-        width:160px;
+    .modern-poster-card{
+        min-width:220px;
+        width:220px;
         border-radius:24px;
     }
 
-    .poster-card img{
-        height:290px;
+    .modern-poster-card img{
+        height:360px;
     }
 
-    .poster-content{
+    .poster-info{
         left:10px;
         right:10px;
         bottom:10px;
@@ -397,11 +408,11 @@
         border-radius:16px;
     }
 
-    .poster-content h3{
-        font-size:.95rem;
+    .poster-info h3{
+        font-size:.9rem;
     }
 
-    .poster-content p{
+    .poster-info p{
         font-size:.72rem;
     }
 }
