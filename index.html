@@ -1,789 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="E. Sakthivel Portfolio - Aspiring IT Professional, Front-End Developer and Graphic Designer" />
 <title>E. Sakthivel | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:Inter,sans-serif;
-  background:#f5f5f2;
-  color:#111;
-  overflow-x:hidden;
+:root{
+  --bg:#f7f7f4;--bg2:#ffffff;--text:#0a0a0b;--muted:#5f6368;--card:rgba(255,255,255,.74);--card2:rgba(245,245,242,.86);--line:rgba(10,10,11,.12);--accent:#111111;--accent2:#737373;--glow:rgba(0,0,0,.18);--shadow:0 30px 100px rgba(0,0,0,.13);--radius:30px;
 }
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-  linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);
-  background-size:55px 55px;
-  pointer-events:none;
-  z-index:-1;
+html[data-theme="dark"]{
+  --bg:#050505;--bg2:#111111;--text:#f6f6f1;--muted:#a0a0a0;--card:rgba(18,18,18,.72);--card2:rgba(255,255,255,.06);--line:rgba(255,255,255,.13);--accent:#ffffff;--accent2:#bdbdbd;--glow:rgba(255,255,255,.18);--shadow:0 30px 110px rgba(0,0,0,.72);
 }
-a{text-decoration:none;color:inherit}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}a{text-decoration:none;color:inherit}ul{list-style:none}::selection{background:var(--text);color:var(--bg)}
+.noise{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.42;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+body::before{content:"";position:fixed;inset:-25%;z-index:-3;background:radial-gradient(circle at 18% 18%,var(--glow),transparent 24%),radial-gradient(circle at 85% 22%,rgba(120,120,120,.18),transparent 25%),radial-gradient(circle at 50% 95%,rgba(255,255,255,.12),transparent 32%),linear-gradient(135deg,var(--bg),var(--bg2));animation:aurora 14s ease-in-out infinite alternate}body::after{content:"";position:fixed;inset:0;z-index:-2;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:74px 74px;mask-image:linear-gradient(to bottom,black,transparent 78%);opacity:.25}@keyframes aurora{to{transform:translate3d(-4%,3%,0) scale(1.05)}}
+header{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:calc(100% - 48px);max-width:1560px;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 14px;background:color-mix(in srgb,var(--card) 88%,transparent);border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(24px);box-shadow:0 22px 70px rgba(0,0,0,.14)}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.4px}.mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--text);color:var(--bg);box-shadow:0 15px 40px var(--glow)}nav ul{display:flex;align-items:center;gap:2px}nav a{display:block;padding:10px 13px;border-radius:999px;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:1.3px;font-weight:900;transition:.25s}nav a:hover,nav a.active{background:var(--card2);color:var(--text)}.actions{display:flex;align-items:center;gap:8px}.icon-btn{border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:999px;height:42px;padding:0 15px;font-weight:900;cursor:pointer}.menu{display:none;width:42px;padding:0}.menu span{display:block;width:18px;height:2px;background:var(--text);margin:4px auto;border-radius:999px}
+.hero{min-height:100vh;padding:150px clamp(22px,4vw,64px) 80px;display:grid;place-items:center;position:relative}.hero-wrap{width:100%;max-width:1560px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(430px,.92fr);gap:clamp(34px,4vw,70px);align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--muted);font-weight:900;font-size:.82rem;margin-bottom:22px;backdrop-filter:blur(18px)}.eyebrow i{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 7px rgba(34,197,94,.14)}h1{font-family:"Playfair Display",serif;font-size:clamp(3.7rem,8.2vw,8.7rem);line-height:.82;letter-spacing:-5px;margin-bottom:28px}.stroke{color:transparent;-webkit-text-stroke:1.2px var(--text)}.shine{display:block;background:linear-gradient(90deg,var(--text),var(--muted),var(--text));background-size:200%;-webkit-background-clip:text;color:transparent;animation:shine 5s linear infinite}@keyframes shine{to{background-position:200%}}.lead{font-size:clamp(1.04rem,1.6vw,1.28rem);color:var(--muted);max-width:680px;margin-bottom:34px}.lead strong{color:var(--text)}.btns{display:flex;flex-wrap:wrap;gap:14px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border-radius:999px;font-weight:900;border:1px solid var(--line);transition:.3s;position:relative;overflow:hidden}.btn.primary{background:var(--text);color:var(--bg);box-shadow:0 18px 50px var(--glow)}.btn.secondary{background:var(--card);color:var(--text);backdrop-filter:blur(18px)}.btn:hover{transform:translateY(-4px)}
+.visual{position:relative;min-height:700px;width:100%;max-width:620px;justify-self:end}.orbit{position:absolute;inset:0;border:1px solid var(--line);border-radius:44px;background:linear-gradient(145deg,var(--card),var(--card2));box-shadow:var(--shadow);backdrop-filter:blur(22px);overflow:hidden}.orbit::before{content:"";position:absolute;inset:-45%;background:radial-gradient(circle at 20% 10%,rgba(255,255,255,.18),transparent 24%),conic-gradient(from 180deg,transparent,var(--text),transparent,var(--muted),transparent);animation:spin 12s linear infinite;opacity:.13}.orbit::after{content:"";position:absolute;inset:1px;border-radius:43px;background:linear-gradient(145deg,var(--card),color-mix(in srgb,var(--bg) 64%,transparent))}@keyframes spin{to{transform:rotate(1turn)}}.profile{position:absolute;z-index:2;inset:32px;display:grid;grid-template-rows:auto auto auto;align-content:start;gap:22px}.profile-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.avatar{width:112px;height:112px;border-radius:32px;background:var(--text);color:var(--bg);display:grid;place-items:center;font-size:2.7rem;font-weight:900;box-shadow:0 24px 70px var(--glow)}.stack-badge{border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:12px 17px;font-weight:900;font-size:.86rem;letter-spacing:.7px;white-space:nowrap}.profile-main{align-self:start}.profile h2{font-size:2.35rem;line-height:1.05;letter-spacing:-1.4px;margin-bottom:10px}.profile p{color:var(--muted);max-width:430px;font-size:1rem}.role-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.role-pills span{border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:9px 12px;color:var(--muted);font-weight:900;font-size:.78rem}.meter{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mini{border:1px solid var(--line);background:var(--card2);border-radius:22px;padding:22px 24px;min-height:126px;display:flex;flex-direction:column;justify-content:center}.mini b{display:block;font-size:2.25rem;line-height:1;letter-spacing:-1px}.mini span{color:var(--muted);font-size:.8rem;font-weight:900;margin-top:8px}
+.section{padding:105px clamp(22px,4vw,64px)}.inner{max-width:1560px;margin:auto}.label{font-weight:900;text-transform:uppercase;letter-spacing:3px;color:var(--muted);font-size:.76rem;margin-bottom:12px}.title{font-family:"Playfair Display",serif;font-size:clamp(2.6rem,5vw,5rem);line-height:.98;letter-spacing:-2.5px;margin-bottom:46px}.title em{font-family:Inter,sans-serif;font-style:normal;color:transparent;-webkit-text-stroke:1px var(--text)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}.card{position:relative;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(22px);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);overflow:hidden;transition:.32s}.card:hover{transform:translateY(-8px);border-color:color-mix(in srgb,var(--text) 32%,var(--line))}.about p{color:var(--muted);margin-bottom:16px}.about strong{color:var(--text)}.stats{display:grid;grid-template-columns:1fr 1fr;gap:15px}.stat b{font-size:3rem;line-height:1;letter-spacing:-2px}.stat span{display:block;color:var(--muted);font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-top:8px}.marquee{border-block:1px solid var(--line);padding:18px 0;overflow:hidden;background:color-mix(in srgb,var(--card2) 70%,transparent)}.track{display:flex;gap:40px;white-space:nowrap;animation:marquee 18s linear infinite}.track span{font-size:clamp(1.4rem,3vw,2.6rem);font-weight:900;color:transparent;-webkit-text-stroke:1px var(--muted);text-transform:uppercase;letter-spacing:1px}@keyframes marquee{to{transform:translateX(-50%)}}
+.timeline{display:grid;gap:18px}.time{display:grid;grid-template-columns:82px 1fr;gap:18px}.dot{width:58px;height:58px;border-radius:20px;background:var(--text);color:var(--bg);display:grid;place-items:center;font-weight:900}.meta{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}.pill{display:inline-flex;padding:7px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--muted);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.9px}.bar{height:9px;border-radius:999px;background:var(--card2);overflow:hidden;margin-top:12px}.bar i{display:block;height:100%;width:var(--w);border-radius:999px;background:linear-gradient(90deg,var(--text),var(--muted))}.experience{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}.badge{display:inline-flex;gap:8px;padding:8px 12px;border-radius:999px;background:var(--text);color:var(--bg);font-weight:900;font-size:.76rem;margin-bottom:15px}.points{display:grid;gap:14px}.point{display:flex;gap:14px;color:var(--muted)}.num{color:var(--text);font-weight:900}.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}.skill-icon{font-size:2rem;margin-bottom:10px}.skill h3,.project h3,.cert h3{font-size:1.15rem;margin-bottom:8px}.level{color:var(--muted);font-weight:800;font-size:.82rem}.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}.project-art{height:190px;border-radius:24px;margin-bottom:22px;display:grid;place-items:center;background:radial-gradient(circle,var(--card2),transparent 65%),linear-gradient(135deg,var(--text),var(--muted));color:var(--bg);font-size:4rem;position:relative;overflow:hidden}.project-art::after{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(255,255,255,.3);border-radius:50%;animation:spin 8s linear infinite}.project p,.cert p{color:var(--muted);margin-bottom:16px}.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}.contact a{display:flex;align-items:center;gap:14px;padding:15px;border:1px solid var(--line);background:var(--card2);border-radius:20px;margin-top:12px;transition:.25s}.contact a:hover{transform:translateX(7px)}.ico{width:46px;height:46px;border-radius:15px;background:var(--text);color:var(--bg);display:grid;place-items:center}.resume-box p{color:var(--muted);margin-bottom:25px}.resume-actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}.resume-actions .btn{width:100%;min-height:54px;margin:0}@media(max-width:560px){.resume-actions{grid-template-columns:1fr}}footer{padding:34px clamp(18px,5vw,72px);border-top:1px solid var(--line);display:flex;justify-content:center;align-items:center;text-align:center;color:var(--muted);font-weight:900;letter-spacing:.2px}.reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.8,.2,1)}.reveal.show{opacity:1;transform:none}
+@media(max-width:980px){nav ul{display:none}.menu{display:block}nav.open ul{display:flex;position:fixed;top:78px;left:16px;right:16px;flex-direction:column;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:16px;backdrop-filter:blur(26px);box-shadow:var(--shadow)}.hero-wrap,.grid2,.experience,.contact{grid-template-columns:1fr}.visual{min-height:520px;order:-1}h1{letter-spacing:-3px}}
+@media(max-width:560px){header{top:10px;width:calc(100% - 20px)}.brand span:last-child{display:none}.hero{padding-top:120px}.visual{min-height:720px}.profile{inset:20px}.profile-top{align-items:flex-start}.stack-badge{font-size:.72rem;padding:10px 12px}.meter,.stats{grid-template-columns:1fr}.time{grid-template-columns:1fr}.btns{flex-direction:column}.btn{width:100%}.title{letter-spacing:-1px}}
 
-header{
-  position:fixed;
-  top:12px;
-  left:50%;
-  transform:translateX(-50%);
-  width:calc(100% - 28px);
-  max-width:1500px;
-  z-index:999;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:10px 14px;
-  background:rgba(255,255,255,.75);
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:999px;
-  backdrop-filter:blur(22px);
-  box-shadow:0 15px 60px rgba(0,0,0,.08);
+/* Final responsive polish for mobile, tablet and laptop */
+@media(max-width:1200px){
+  .hero-wrap{gap:34px}
+  .visual{min-height:620px}
+  .profile h2{font-size:2.05rem}
 }
-.brand{display:flex;align-items:center;gap:10px;font-weight:900}
-.logo{
-  width:42px;height:42px;border-radius:50%;
-  background:#000;color:#fff;
-  display:grid;place-items:center;
-  font-weight:900;
+@media(max-width:980px){
+  header{padding:10px 12px}
+  .hero{min-height:auto;padding:125px clamp(16px,4vw,34px) 58px}
+  .hero-wrap{gap:32px}
+  .visual{min-height:500px;width:min(620px,100%);margin:auto}
+  .section{padding:78px clamp(16px,4vw,34px)}
+  .projects{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 }
-nav{display:flex;gap:12px}
-nav a{
-  font-size:.72rem;
-  font-weight:900;
-  letter-spacing:1px;
-  color:#777;
-  padding:9px 12px;
-  border-radius:999px;
+@media(max-width:720px){
+  .hero{padding-top:112px}
+  h1{font-size:clamp(3rem,16vw,5.2rem);line-height:.86;letter-spacing:-2.4px}
+  .lead{font-size:1rem}
+  .visual{min-height:560px}
+  .profile{gap:16px}
+  .profile-top{gap:12px}
+  .avatar{width:88px;height:88px;border-radius:25px;font-size:2.15rem}
+  .profile h2{font-size:1.78rem}
+  .profile p{font-size:.94rem}
+  .mini{min-height:104px;padding:18px}
+  .mini b{font-size:1.85rem}
+  .card{padding:24px;border-radius:24px}
+  .project-art{height:160px}
+  .contact a{align-items:flex-start;word-break:break-word}
 }
-nav a:hover{background:#111;color:#fff}
-.theme-btn{
-  border:0;
-  background:#111;
-  color:#fff;
-  padding:10px 18px;
-  border-radius:999px;
-  font-weight:900;
+@media(max-width:560px){
+  body{line-height:1.62}
+  header{border-radius:22px}
+  .icon-btn{height:40px;padding:0 12px}
+  .hero{padding-left:14px;padding-right:14px;padding-bottom:44px}
+  .eyebrow{font-size:.72rem;padding:8px 11px}
+  .visual{min-height:auto;order:0}
+  .orbit{position:relative;min-height:530px}
+  .profile{position:absolute;inset:18px}
+  .stack-badge{white-space:normal;text-align:center}
+  .role-pills span{font-size:.7rem}
+  .section{padding:62px 14px}
+  .title{font-size:clamp(2.25rem,12vw,3.3rem)}
+  .projects,.certs,.skills{grid-template-columns:1fr}
+  .marquee{padding:12px 0}
+  .track{gap:24px}
+  .track span{font-size:1.25rem}
+  footer{padding:28px 14px;font-size:.92rem}
 }
-
-/* HERO */
-.hero{
-  min-height:100vh;
-  padding:120px 22px 60px;
-  display:grid;
-  place-items:center;
-}
-.hero-box{
-  width:100%;
-  max-width:1180px;
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:45px;
-  align-items:center;
-}
-.profile-card{
-  max-width:430px;
-  margin:auto;
-  background:rgba(255,255,255,.75);
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:28px;
-  padding:28px;
-  box-shadow:0 30px 90px rgba(0,0,0,.1);
-}
-.profile-logo{
-  width:70px;height:70px;border-radius:16px;
-  background:#000;color:#fff;
-  display:grid;place-items:center;
-  font-weight:900;
-  font-size:1.4rem;
-  margin-bottom:18px;
-}
-.profile-card h2{font-size:1.8rem;margin-bottom:6px}
-.profile-card p{color:#555;font-size:.92rem;margin-bottom:15px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.tags span{
-  font-size:.67rem;
-  font-weight:900;
-  border:1px solid #ddd;
-  padding:7px 10px;
-  border-radius:999px;
-  background:#fff;
-}
-.stats{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-.stat{
-  background:#fff;
-  border:1px solid #ddd;
-  border-radius:14px;
-  padding:15px;
-}
-.stat b{font-size:1.7rem}
-.stat span{display:block;font-size:.68rem;font-weight:800;color:#555}
-
-.hero-text h1{
-  font-family:"Playfair Display",serif;
-  font-size:clamp(3.5rem,8vw,7.5rem);
-  line-height:.82;
-  letter-spacing:-4px;
-}
-.outline{
-  color:transparent;
-  -webkit-text-stroke:1.2px #111;
-}
-.hero-text p{
-  max-width:620px;
-  margin:24px 0;
-  color:#555;
-  line-height:1.8;
-}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{
-  padding:13px 18px;
-  border-radius:999px;
-  font-weight:900;
-  font-size:.85rem;
-}
-.btn.dark{background:#000;color:#fff}
-.btn.light{background:#fff;border:1px solid #ddd}
-
-/* COMMON */
-section{padding:90px 22px}
-.inner{max-width:1250px;margin:auto}
-.label{
-  font-size:.7rem;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  font-weight:900;
-  color:#777;
-  margin-bottom:8px;
-}
-.title{
-  font-family:"Playfair Display",serif;
-  font-size:clamp(2.4rem,5vw,4.8rem);
-  line-height:.95;
-  margin-bottom:35px;
-}
-.title em{
-  font-style:normal;
-  color:transparent;
-  -webkit-text-stroke:1px #111;
-}
-
-/* ABOUT */
-.about-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:20px;
-}
-.card{
-  background:rgba(255,255,255,.75);
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:26px;
-  padding:26px;
-  box-shadow:0 25px 80px rgba(0,0,0,.08);
-}
-.card p{color:#555;line-height:1.8}
-
-/* EDUCATION */
-.timeline{display:grid;gap:16px}
-.edu-card h3{font-size:1.2rem;margin-bottom:10px}
-.pills{display:flex;gap:8px;flex-wrap:wrap}
-.pills span{
-  font-size:.72rem;
-  font-weight:900;
-  background:#f1f1f1;
-  border:1px solid #ddd;
-  border-radius:999px;
-  padding:7px 10px;
-}
-
-/* SKILLS */
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:16px;
-}
-.skill-card{
-  position:relative;
-  min-height:190px;
-  padding:22px;
-  border-radius:24px;
-  background:linear-gradient(145deg,#fff,#efefef);
-  border:1px solid rgba(0,0,0,.08);
-  box-shadow:0 25px 70px rgba(0,0,0,.08);
-  transition:.35s;
-}
-.skill-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 35px 90px rgba(0,0,0,.14);
-}
-.skill-icon{font-size:2rem;margin-bottom:18px}
-.skill-card h3{font-size:1.2rem;margin-bottom:8px}
-.skill-card span{color:#777;font-size:.82rem;font-weight:800}
-.bar{
-  height:8px;
-  background:#ddd;
-  border-radius:999px;
-  margin-top:20px;
-  overflow:hidden;
-}
-.bar i{
-  display:block;
-  height:100%;
-  width:var(--w);
-  background:linear-gradient(90deg,#000,#777);
-  border-radius:999px;
-}
-
-/* PROJECTS FINAL */
-.project-showcase{
-  background:#050505;
-  color:#fff;
-}
-.project-showcase .title em{
-  -webkit-text-stroke:1px #fff;
-}
-.project-showcase .label{color:#999}
-.project-top-card{
-  background:linear-gradient(145deg,#111,#090909);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:32px;
-  padding:28px;
-  margin-bottom:24px;
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:28px;
-  align-items:center;
-}
-.logo-stage{
-  min-height:290px;
-  border-radius:26px;
-  border:1px solid rgba(255,255,255,.12);
-  background:radial-gradient(circle,#182b18,#080808 62%);
-  display:grid;
-  place-items:center;
-  overflow:hidden;
-  position:relative;
-}
-.logo-stage::before{
-  content:"Ai";
-  position:absolute;left:28px;top:28px;
-}
-.logo-stage::after{
-  content:"Ps";
-  position:absolute;right:28px;top:28px;
-}
-.logo-stage img{
-  width:80%;
-  max-height:220px;
-  object-fit:contain;
-  filter:drop-shadow(0 0 25px rgba(93,255,73,.28));
-}
-.project-copy h3{
-  font-size:clamp(1.8rem,4vw,3.8rem);
-  line-height:1;
-  margin-bottom:18px;
-}
-.project-copy p{
-  color:#aaa;
-  line-height:1.8;
-  margin-bottom:18px;
-}
-.process{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-.process div{
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:18px;
-  padding:14px;
-  background:rgba(255,255,255,.04);
-}
-.process b{font-size:1.3rem}
-.process span{
-  display:block;
-  color:#aaa;
-  font-size:.65rem;
-  font-weight:900;
-  margin-top:4px;
-}
-
-.poster-row{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-.poster-card{
-  position:relative;
-  height:430px;
-  border-radius:26px;
-  overflow:hidden;
-  background:#111;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 30px 80px rgba(0,0,0,.35);
-}
-.poster-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:.55s;
-}
-.poster-card:hover img{transform:scale(1.07)}
-.poster-info{
-  position:absolute;
-  left:12px;
-  right:12px;
-  bottom:12px;
-  padding:14px;
-  border-radius:18px;
-  background:rgba(0,0,0,.58);
-  backdrop-filter:blur(14px);
-}
-.poster-info h3{font-size:.95rem;margin-bottom:5px}
-.poster-info p{font-size:.72rem;color:#ddd;line-height:1.45}
-
-/* CONTACT */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-.contact-card a{
-  display:block;
-  background:#fff;
-  border:1px solid #ddd;
-  border-radius:18px;
-  padding:14px;
-  margin-top:10px;
-  font-weight:800;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:28px;
-  color:#777;
-  font-weight:800;
-}
-
-/* ANIMATION */
-.reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:.7s ease;
-}
-.reveal.show{
-  opacity:1;
-  transform:none;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  nav{display:none}
-  .hero-box,
-  .about-grid,
-  .project-top-card,
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero{
-    padding-top:95px;
-  }
-
-  .profile-card{
-    max-width:270px;
-    padding:18px;
-    border-radius:22px;
-  }
-
-  .profile-logo{
-    width:50px;
-    height:50px;
-    font-size:1rem;
-  }
-
-  .profile-card h2{
-    font-size:1rem;
-  }
-
-  .profile-card p{
-    font-size:.62rem;
-  }
-
-  .tags span{
-    font-size:.48rem;
-    padding:5px 7px;
-  }
-
-  .stat{
-    padding:10px;
-  }
-
-  .stat b{
-    font-size:1.15rem;
-  }
-
-  .stat span{
-    font-size:.48rem;
-  }
-
-  .hero-text h1{
-    font-size:3rem;
-    letter-spacing:-2px;
-  }
-
-  .hero-text p{
-    font-size:.82rem;
-  }
-
-  section{
-    padding:60px 14px;
-  }
-
-  .skills-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-  }
-
-  .skill-card{
-    min-height:135px;
-    padding:15px;
-    border-radius:18px;
-  }
-
-  .skill-icon{
-    font-size:1.4rem;
-    margin-bottom:10px;
-  }
-
-  .skill-card h3{
-    font-size:.85rem;
-  }
-
-  .skill-card span{
-    font-size:.6rem;
-  }
-
-  .bar{
-    height:6px;
-    margin-top:12px;
-  }
-
-  .project-top-card{
-    padding:16px;
-    border-radius:22px;
-  }
-
-  .logo-stage{
-    min-height:180px;
-    border-radius:18px;
-  }
-
-  .project-copy h3{
-    font-size:1.5rem;
-  }
-
-  .project-copy p{
-    font-size:.72rem;
-  }
-
-  .process{
-    grid-template-columns:repeat(4,1fr);
-    gap:6px;
-  }
-
-  .process div{
-    padding:9px;
-    border-radius:12px;
-  }
-
-  .process b{
-    font-size:.85rem;
-  }
-
-  .process span{
-    font-size:.45rem;
-  }
-
-  /* mobile desktop-like poster row */
-  .poster-row{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-  }
-
-  .poster-card{
-    height:210px;
-    border-radius:14px;
-  }
-
-  .poster-info{
-    left:6px;
-    right:6px;
-    bottom:6px;
-    padding:7px;
-    border-radius:10px;
-  }
-
-  .poster-info h3{
-    font-size:.52rem;
-  }
-
-  .poster-info p{
-    font-size:.42rem;
-    line-height:1.35;
-  }
-
-  .title{
-    font-size:2.1rem;
-  }
-}
-
 @media(max-width:390px){
-  .poster-card{
-    height:195px;
-  }
-
-  .poster-info p{
-    display:none;
-  }
+  h1{font-size:2.75rem}
+  .visual .orbit{min-height:570px}
+  .profile{inset:14px}
+  .avatar{width:78px;height:78px}
+  .mini{padding:15px}
+  .mini b{font-size:1.65rem}
+  .card{padding:20px}
 }
+
+
+/* Full screen desktop + stronger mobile fixes */
+@media(min-width:1400px){
+  .hero-wrap,.inner{max-width:1600px}
+  .hero{padding-left:56px;padding-right:56px}
+  h1{font-size:clamp(6.2rem,7.4vw,8.9rem)}
+  .lead{max-width:760px}
+  .visual{max-width:660px}
+}
+@media(max-width:1180px){
+  .hero-wrap{grid-template-columns:1fr;max-width:920px}
+  .visual{justify-self:center;max-width:680px;order:-1;min-height:560px}
+  .hero{text-align:left}
+}
+@media(max-width:980px){
+  header{width:calc(100% - 24px);max-width:none}
+  .hero-wrap{max-width:720px}
+  .visual{max-width:620px}
+}
+@media(max-width:640px){
+  header{top:10px;width:calc(100% - 18px);border-radius:24px}
+  .hero{padding:112px 14px 46px;text-align:left}
+  .hero-wrap{display:block;width:100%}
+  .visual{max-width:100%;min-height:auto;margin-top:30px;order:0}
+  .orbit{position:relative;min-height:540px;border-radius:30px}
+  .orbit::after{border-radius:29px}
+  .profile{position:absolute;inset:16px;gap:16px}
+  .profile-top{display:block}
+  .avatar{width:82px;height:82px;border-radius:24px;font-size:2rem}
+  .profile h2{font-size:1.72rem}
+  .profile p{font-size:.92rem;line-height:1.55}
+  .role-pills{gap:8px;margin-top:14px}
+  .role-pills span{font-size:.68rem;padding:8px 10px}
+  .meter{grid-template-columns:1fr 1fr;gap:10px}
+  .mini{min-height:92px;padding:14px;border-radius:18px}
+  .mini b{font-size:1.55rem}
+  .mini span{font-size:.68rem}
+  h1{font-size:clamp(3rem,17vw,5.1rem);letter-spacing:-2px;margin-bottom:22px}
+  .lead{margin-bottom:26px}
+}
+@media(max-width:430px){
+  .orbit{min-height:585px}
+  .meter{grid-template-columns:1fr}
+  .mini{min-height:78px}
+}
+
 </style>
 </head>
-
 <body>
-
-<header>
-  <a href="#home" class="brand">
-    <span class="logo">ES</span>
-    <span>E. Sakthivel</span>
-  </a>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <button class="theme-btn">Light</button>
+<div class="noise"></div>
+<header id="header">
+  <a href="#home" class="brand"><span class="mark">ES</span><span>E. Sakthivel</span></a>
+  <nav id="nav"><ul id="navLinks"><li><a class="active" href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#education">Education</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+  <div class="actions"><button class="icon-btn" id="themeToggle">Dark</button><button class="icon-btn menu" id="menu"><span></span><span></span></button></div>
 </header>
-
 <main>
-
 <section class="hero" id="home">
-  <div class="hero-box">
-    <div class="profile-card reveal">
-      <div class="profile-logo">ES</div>
-      <h2>E. Sakthivel</h2>
-      <p>Front-End Learner · UI/UX Basics · Graphic Designer · SQL Beginner</p>
-
-      <div class="tags">
-        <span>Photoshop / Canva</span>
-        <span>Modern UI Design</span>
-        <span>Responsive Web</span>
-      </div>
-
-      <div class="stats">
-        <div class="stat"><b>79%</b><span>Current CGPA</span></div>
-        <div class="stat"><b>1+</b><span>Internship</span></div>
-        <div class="stat"><b>5+</b><span>Tools</span></div>
-        <div class="stat"><b>2+</b><span>Certificates</span></div>
-      </div>
+  <div class="hero-wrap">
+    <div class="reveal">
+      <div class="eyebrow"><i></i> Available for IT & Design Opportunities</div>
+      <h1><span class="stroke">Creative</span><span class="shine">Developer</span><span>Portfolio.</span></h1>
+      <p class="lead">I'm <strong>E. Sakthivel</strong>, a B.Sc. Computer Science student, aspiring IT professional, front-end learner, and graphic designer building clean, modern, user-focused digital experiences.</p>
+      <div class="btns"><a class="btn primary" href="#projects">Explore My Work →</a><a class="btn secondary" href="#contact">Hire / Contact Me</a></div>
     </div>
-
-    <div class="hero-text reveal">
-      <h1><span class="outline">Creative</span><br>Developer<br>Portfolio.</h1>
-      <p>I'm <strong>E. Sakthivel</strong>, a B.Sc. Computer Science student, aspiring IT professional, front-end learner, and graphic designer building clean, modern, user-focused digital experiences.</p>
-      <div class="btns">
-        <a href="#projects" class="btn dark">Explore My Work →</a>
-        <a href="#contact" class="btn light">Hire / Contact Me</a>
+    <div class="visual reveal">
+      <div class="orbit"></div>
+      <div class="profile">
+        <div class="profile-top"><div class="avatar">ES</div></div>
+        <div class="profile-main"><h2>E. Sakthivel</h2><p>Front-End Learner · UI/UX Basics · Graphic Designer · SQL Beginner</p><div class="role-pills"><span>Photoshop / Canva</span><span>Modern UI Design</span><span>Responsive Web</span></div></div>
+        <div class="meter"><div class="mini"><b>79%</b><span>Current CGPA</span></div><div class="mini"><b>1+</b><span>Internship</span></div><div class="mini"><b>5+</b><span>Tools</span></div><div class="mini"><b>2+</b><span>Certificates</span></div></div>
       </div>
     </div>
   </div>
 </section>
-
-<section id="about">
-  <div class="inner">
-    <div class="label">Who I Am</div>
-    <h2 class="title">About My <em>Craft</em></h2>
-
-    <div class="about-grid">
-      <div class="card reveal">
-        <p>I am a <strong>Computer Science student</strong> at K.S. Rangasamy College of Arts and Science. I enjoy combining front-end development with graphic design to create polished digital products.</p>
-      </div>
-
-      <div class="card reveal">
-        <p>My goal is to grow as an IT professional by building responsive websites, clean interfaces, and useful applications.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <div class="inner">
-    <div class="label">Academic Path</div>
-    <h2 class="title">Education <em>Timeline</em></h2>
-
-    <div class="timeline">
-      <div class="card edu-card reveal">
-        <h3>Bachelor of Science — Computer Science</h3>
-        <div class="pills"><span>K.S. Rangasamy College</span><span>2023 - 2026</span><span>79%</span></div>
-      </div>
-
-      <div class="card edu-card reveal">
-        <h3>Higher Secondary Certificate</h3>
-        <div class="pills"><span>St. Mary's Matric. Hr. Sec. School</span><span>2023</span><span>68%</span></div>
-      </div>
-
-      <div class="card edu-card reveal">
-        <h3>Secondary School Certificate</h3>
-        <div class="pills"><span>St. Mary's Matric. Hr. Sec. School</span><span>2021</span><span>85%</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="inner">
-    <div class="label">Work Experience</div>
-    <h2 class="title">Applied <em>Experience</em></h2>
-
-    <div class="card reveal">
-      <h3>Graphic Designer Intern</h3>
-      <p>Imagivite Technology Pvt. Ltd., Tiruchengode. Created hiring posters, branding assets, social media visuals, and digital design layouts using Photoshop and Canva.</p>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="inner">
-    <div class="label">Technical Abilities</div>
-    <h2 class="title">Skills & <em>Tools</em></h2>
-
-    <div class="skills-grid">
-      <div class="skill-card reveal"><div class="skill-icon">🌐</div><h3>HTML5</h3><span>Intermediate</span><div class="bar"><i style="--w:85%"></i></div></div>
-      <div class="skill-card reveal"><div class="skill-icon">🎨</div><h3>CSS3</h3><span>Intermediate</span><div class="bar"><i style="--w:80%"></i></div></div>
-      <div class="skill-card reveal"><div class="skill-icon">⚡</div><h3>JavaScript</h3><span>Basics</span><div class="bar"><i style="--w:60%"></i></div></div>
-      <div class="skill-card reveal"><div class="skill-icon">🗃️</div><h3>SQL</h3><span>Beginner</span><div class="bar"><i style="--w:55%"></i></div></div>
-      <div class="skill-card reveal"><div class="skill-icon">🧩</div><h3>UI / UX</h3><span>Basics</span><div class="bar"><i style="--w:60%"></i></div></div>
-      <div class="skill-card reveal"><div class="skill-icon">🖼️</div><h3>Photoshop</h3><span>Intermediate</span><div class="bar"><i style="--w:78%"></i></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="project-showcase" id="projects">
-  <div class="inner">
-    <div class="label">Featured Work</div>
-    <h2 class="title">Projects & <em>Creative Works</em></h2>
-
-    <div class="project-top-card reveal">
-      <div class="logo-stage">
-        <img src="1000199980.jpg.jpeg" alt="Bookynet Logo"
-        onerror="this.onerror=null;this.src='1000199980.jpg';">
-      </div>
-
-      <div class="project-copy">
-        <h3>Branding, Posters & Digital Design</h3>
-        <p>Internship design showcase including hiring posters, AI education poster, logo design, layout design, and creative social media style works.</p>
-
-        <div class="process">
-          <div><b>01</b><span>Concept</span></div>
-          <div><b>02</b><span>Layout</span></div>
-          <div><b>03</b><span>Visuals</span></div>
-          <div><b>04</b><span>Final</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="poster-row reveal">
-
-      <div class="poster-card">
-        <img src="1000199984.png" alt="Internship Hiring Poster">
-        <div class="poster-info">
-          <h3>Internship Hiring Poster</h3>
-          <p>Bold recruitment poster with role list and company details.</p>
-        </div>
-      </div>
-
-      <div class="poster-card">
-        <img src="1000300631.jpg.jpeg" alt="AI in Education Poster"
-        onerror="this.onerror=null;this.src='1000300631.jpg';">
-        <div class="poster-info">
-          <h3>AI in Education Poster</h3>
-          <p>Technology themed AI education visual design.</p>
-        </div>
-      </div>
-
-      <div class="poster-card">
-        <img src="1000199975.jpg.jpeg" alt="Startup Hiring Poster"
-        onerror="this.onerror=null;this.src='1000199975.jpg';">
-        <div class="poster-info">
-          <h3>Startup Hiring Poster</h3>
-          <p>High contrast internship promotion poster.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="inner">
-    <div class="label">Reach Out</div>
-    <h2 class="title">Let's Build Something <em>Great</em></h2>
-
-    <div class="contact-grid">
-      <div class="card contact-card reveal">
-        <p>Open to internships, design work, web development opportunities, and collaborations.</p>
-        <a href="tel:+919342909014">Phone: +91 9342909014</a>
-        <a href="mailto:sakthiveleswaran2104@gmail.com">Email: sakthiveleswaran2104@gmail.com</a>
-      </div>
-
-      <div class="card reveal">
-        <h3>My Resume</h3>
-        <p>Keep your resume PDF in assets/Resume folder and link it here.</p>
-        <br>
-        <a class="btn dark" href="assets/Resume/Sakthivel Resume.pdf" target="_blank">View Resume</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  © 2026 E. Sakthivel · Portfolio
-</footer>
-
+<div class="marquee"><div class="track"><span>Web Design</span><span>Portfolio</span><span>Graphic Design</span><span>Responsive UI</span><span>Clean Code</span><span>Web Design</span><span>Portfolio</span><span>Graphic Design</span><span>Responsive UI</span><span>Clean Code</span></div></div>
+<section class="section" id="about"><div class="inner"><div class="label">Who I Am</div><h2 class="title">About My <em>Craft</em></h2><div class="grid2"><div class="card about reveal"><p>I am a <strong>Computer Science student</strong> at K.S. Rangasamy College of Arts and Science, focused on creating polished digital products.</p><p>I enjoy combining <strong>front-end development</strong> with <strong>graphic design</strong>, because a great website should be both functional and visually impressive.</p><p>My goal is to grow as an IT professional by building responsive websites, clean interfaces, and useful applications.</p></div><div class="stats"><div class="card stat reveal"><b>79%</b><span>B.Sc. CGPA</span></div><div class="card stat reveal"><b>2026</b><span>Graduation</span></div><div class="card stat reveal"><b>1</b><span>Internship</span></div><div class="card stat reveal"><b>2+</b><span>Certificates</span></div></div></div></div></section>
+<section class="section" id="education"><div class="inner"><div class="label">Academic Path</div><h2 class="title">Education <em>Timeline</em></h2><div class="timeline"><div class="time reveal"><div class="dot">B</div><div class="card"><h3>Bachelor of Science — Computer Science</h3><div class="meta"><span class="pill">K.S. Rangasamy College</span><span class="pill">Periyar University</span><span class="pill">2023 – 2026</span></div><strong>79%</strong><div class="bar"><i style="--w:79%"></i></div></div></div><div class="time reveal"><div class="dot">H</div><div class="card"><h3>Higher Secondary Certificate</h3><div class="meta"><span class="pill">St. Mary's Matric. Hr. Sec. School</span><span class="pill">2023</span><span class="pill">State Board</span></div><strong>68%</strong><div class="bar"><i style="--w:68%"></i></div></div></div><div class="time reveal"><div class="dot">S</div><div class="card"><h3>Secondary School Certificate</h3><div class="meta"><span class="pill">St. Mary's Matric. Hr. Sec. School</span><span class="pill">2021</span><span class="pill">State Board</span></div><strong>85%</strong><div class="bar"><i style="--w:85%"></i></div></div></div></div></div></section>
+<section class="section" id="experience"><div class="inner"><div class="label">Work Experience</div><h2 class="title">Applied <em>Experience</em></h2><div class="card experience reveal"><div><span class="badge">● Completed · March 2025</span><h3>Graphic Designer Intern</h3><p class="lead" style="font-size:1rem;margin:12px 0 0">Imagivite Technology Pvt. Ltd., Tiruchengode<br>Tools: Adobe Photoshop, Canva</p></div><div class="points"><p class="point"><span class="num">01</span>Designed branding assets including logos, application banners, and hiring posters.</p><p class="point"><span class="num">02</span>Improved practical knowledge in visual hierarchy, layout, spacing, and color theory.</p><p class="point"><span class="num">03</span>Created digital designs with professional consistency and deadline-focused workflow.</p></div></div></div></section>
+<section class="section" id="skills"><div class="inner"><div class="label">Technical Abilities</div><h2 class="title">Skills & <em>Toolbox</em></h2><div class="skills"><div class="card skill reveal"><div class="skill-icon">🌐</div><h3>HTML5</h3><div class="level">Intermediate</div><div class="bar"><i style="--w:80%"></i></div></div><div class="card skill reveal"><div class="skill-icon">🎨</div><h3>CSS3</h3><div class="level">Intermediate</div><div class="bar"><i style="--w:78%"></i></div></div><div class="card skill reveal"><div class="skill-icon">⚡</div><h3>JavaScript</h3><div class="level">Basics</div><div class="bar"><i style="--w:55%"></i></div></div><div class="card skill reveal"><div class="skill-icon">🗃️</div><h3>SQL</h3><div class="level">Beginner</div><div class="bar"><i style="--w:50%"></i></div></div><div class="card skill reveal"><div class="skill-icon">🧩</div><h3>UI / UX Design</h3><div class="level">Basics</div><div class="bar"><i style="--w:60%"></i></div></div><div class="card skill reveal"><div class="skill-icon">🖼️</div><h3>Adobe Photoshop</h3><div class="level">Intermediate</div><div class="bar"><i style="--w:72%"></i></div></div></div></div></section>
+<section class="section" id="projects"><div class="inner"><div class="label">Featured Work</div><h2 class="title">Projects I've <em>Built</em></h2><div class="projects"><div class="card project reveal"><div class="project-art">💻</div><h3>Personal Portfolio Website</h3><p>Responsive portfolio website with modern sections, smooth animation, and clean black-and-white design.</p><div class="meta"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Responsive</span></div></div><div class="card project reveal"><div class="project-art">🏫</div><h3>ERP Based School Management System</h3><p>School ERP concept with role-based dashboards for admin, teacher, and student management.</p><div class="meta"><span class="pill">React</span><span class="pill">Dashboard</span><span class="pill">UI Design</span><span class="pill">Database</span></div></div><div class="card project reveal"><div class="project-art">🎭</div><h3>Brand Identity Designs</h3><p>Logos, promotional banners, hiring posters, and creative social media designs made during internship practice.</p><div class="meta"><span class="pill">Photoshop</span><span class="pill">Canva</span><span class="pill">Branding</span></div></div></div></div></section>
+<section class="section" id="certificates"><div class="inner"><div class="label">Credentials</div><h2 class="title">Earned <em>Certificates</em></h2><div class="certs"><div class="card cert reveal"><h3>🏅 Certificate in Poster Making</h3><p>Design skills and creative visual communication.</p></div><div class="card cert reveal"><h3>🎓 Canva Design — Course Completion</h3><p>Practical design workflow and digital layout creation.</p></div></div></div></section>
+<section class="section" id="contact"><div class="inner"><div class="label">Reach Out</div><h2 class="title">Let's Build Something <em>Great</em></h2><div class="contact"><div class="card reveal"><p class="lead" style="font-size:1rem;margin-bottom:18px">Open to internships, design work, web development opportunities, and professional collaborations.</p><a href="tel:+919342909014"><span class="ico">☎</span><span><strong>Phone</strong><br>+91 9342909014</span></a><a href="mailto:sakthiveleswaran2104@gmail.com"><span class="ico">✉</span><span><strong>Email</strong><br>sakthiveleswaran2104@gmail.com</span></a><a href="https://www.linkedin.com/in/sakthivel-e-562943361" target="_blank"><span class="ico">in</span><span><strong>LinkedIn</strong><br>sakthivel-e-562943361</span></a></div><div class="card resume-box reveal"><h3>My Resume</h3><p>Use the buttons below to view or download my full resume. Keep your PDF in the same path used here.</p><div class="resume-actions"><a href="assets/Resume/Sakthivel Resume.pdf" target="_blank" class="btn primary">View Resume</a><a href="assets/Resume/Sakthivel Resume.pdf" download class="btn secondary">Download Resume</a></div></div></div></div></section>
+</main><footer><div>© 2026 <strong>E. Sakthivel</strong> · Portfolio</div></footer>
 <script>
-const reveals=document.querySelectorAll(".reveal");
-function showReveal(){
-  reveals.forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight - 80){
-      el.classList.add("show");
-    }
-  });
-}
-window.addEventListener("scroll",showReveal);
-window.addEventListener("load",showReveal);
+const root=document.documentElement,themeToggle=document.getElementById('themeToggle'),saved=localStorage.getItem('theme')||'dark';function setTheme(t){root.setAttribute('data-theme',t);localStorage.setItem('theme',t);themeToggle.textContent=t==='dark'?'Dark':'Light'}setTheme(saved);themeToggle.onclick=()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');
+const nav=document.getElementById('nav');document.getElementById('menu').onclick=()=>nav.classList.toggle('open');document.querySelectorAll('#navLinks a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+const reveal=()=>document.querySelectorAll('.reveal').forEach((el,i)=>{if(el.getBoundingClientRect().top<innerHeight-80){el.style.transitionDelay=(i%6)*.04+'s';el.classList.add('show')}});const links=document.querySelectorAll('#navLinks a'),sections=document.querySelectorAll('section[id]');function active(){let id='home';sections.forEach(s=>{if(scrollY>=s.offsetTop-170)id=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id))}addEventListener('scroll',()=>{reveal();active()});addEventListener('load',()=>{reveal();active()});
 </script>
-
 </body>
 </html>
